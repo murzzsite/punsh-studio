@@ -146,6 +146,25 @@ html:not(.js) .w i, .loaded .w i { transform: none; }
 .who__list li.is-active > p { max-height: 260px; opacity: 1; margin: 6px 0 14px; }
 .who__note { margin-top: 56px; max-width: 46ch; }
 
+/* ---------- WORKS ---------- */
+.works { padding: var(--sec) var(--m); background: var(--bg); }
+.works .head { max-width: 18ch; margin-bottom: clamp(40px, 6vw, 88px); }
+.works__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(56px, 7vw, 112px) var(--gap); align-items: start; }
+.work--a { grid-column: 1 / 6; }
+.work--b { grid-column: 7 / 13; margin-top: 10vw; }
+.work--c { grid-column: 2 / 6; }
+.work--d { grid-column: 7 / 13; margin-top: 4vw; }
+.work__ph { display: block; overflow: hidden; background: var(--surface); }
+.work--a .work__ph, .work--c .work__ph { aspect-ratio: 4 / 5; }
+.work--b .work__ph { aspect-ratio: 5 / 4; }
+.work--d .work__ph { aspect-ratio: 16 / 9; }
+.work__ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.work__ph:hover img, .work__ph:focus-visible img { transform: scale(1.05); }
+.work__name { font-size: var(--step-lead); line-height: 1.1; letter-spacing: -0.01em; margin: 22px 0 8px; }
+.work p { max-width: 42ch; margin-bottom: 14px; }
+.works__more { margin-top: clamp(64px, 8vw, 120px); }
+.works__more a { text-underline-offset: 4px; }
+
 /* ---------- HOW ---------- */
 .how { --vs: var(--d2); }
 .how__step { position: relative; height: 100svh; overflow: clip; padding-top: calc(50svh - var(--vs) * .45); background: var(--surface); }
@@ -268,6 +287,8 @@ html:not(.js) .w i, .loaded .w i { transform: none; }
   .who__ph { position: sticky; top: 0; z-index: 3; width: calc(100% + var(--m) * 2); margin: 0 calc(var(--m) * -1); aspect-ratio: auto; height: 36svh; }
   .who__body { padding-top: 32px; padding-bottom: 12vh; }
   .how__cap { right: var(--m); max-width: none; }
+  .works__grid { display: block; }
+  .work, .work--b, .work--d { margin-top: 0; margin-bottom: 56px; }
   .price { padding-inline: var(--m); }
   .ticket { grid-template-columns: 1fr; width: 100%; }
   .ticket__main { padding: 24px 20px; }
