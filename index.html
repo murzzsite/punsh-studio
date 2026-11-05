@@ -1,278 +1,88 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punsh Studio — интерактивные сайты для книг и подарков</title>
-<meta name="description" content="Индивидуальные интерактивные сайты по мотивам книг и персональные сайты-подарки: персонажи, анимация, музыка, мини-игры. Работаем дистанционно по всей России.">
-<meta name="theme-color" content="#eeecea">
-<meta property="og:title" content="Punsh Studio — интерактивные сайты для книг и подарков">
-<meta property="og:description" content="Не шаблон на всех, а сайт под одну историю: книгу, человека, событие.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<script>document.documentElement.classList.add('js')</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PUNSH STUDIO — особенная история по вашей ссылке</title>
+<meta name="description" content="Сайты для книг, персональные сайты-подарки и коммерческие лендинги — от 7 900 ₽. Откройте историю с печатью PUNSH.">
+<meta name="theme-color" content="#e4cfee"><meta property="og:title" content="Некоторые ссылки открывают больше, чем страницу — PUNSH STUDIO"><meta property="og:description" content="Сайты для книг, особенных подарков и вашего бизнеса. Начнем с вашей истории."><meta property="og:type" content="website"><meta property="og:locale" content="ru_RU">
+<link rel="icon" href="favicon.ico"><link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff" crossorigin href="assets/studio-sans.woff"><link rel="preload" as="font" type="font/woff" crossorigin href="assets/studio-bold.woff">
+<link rel="preload" as="image" href="assets/envelope-paper.webp"><link rel="preload" as="image" href="assets/punsh-seal.webp">
+<link rel="stylesheet" href="envelope.css"><script defer src="config.js"></script><script defer src="envelope.js"></script>
 </head>
 <body>
-
-<a class="skip" href="#series">К содержанию</a>
-<a class="topcta btn" href="#contact" data-magnet>Обсудить проект</a>
-
-<main>
-
-<!-- ============ HERO: имя в углах, панели проходят между ============ -->
-<section class="pin" id="top">
-  <div class="pin__layer">
-    <h1 class="pin__title"><span class="w w--a"><i>Punsh</i></span> <span class="w w--b"><i>Studio</i></span></h1>
+<a class="skip-link" href="#main">К содержанию</a>
+<div class="header-world" id="top">
+<header class="header wrap"><a class="brand" href="#top" aria-label="PUNSH STUDIO — на главную">PUNSH <span>STUDIO</span></a><nav class="nav" id="navigation" aria-label="Главное меню"><a href="#works">Работы</a><a href="#formats">Форматы</a><a href="#pricing">Стоимость</a></nav><a class="header-contact" href="#contact">Обсудить проект <span aria-hidden="true" class="arrow">↗</span></a><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="Открыть меню"><span></span><span></span></button></header></div>
+<main id="main">
+<div class="invitation-world">
+<section class="invitation-hero wrap" aria-labelledby="hero-title">
+<div class="hero-intro"><p class="eyebrow">Сайты для книг, подарков и бизнеса</p><h1 id="hero-title">Некоторые ссылки открывают <span>больше, чем страницу.</span></h1></div>
+<div class="envelope-stage" id="envelope-stage">
+  <div class="envelope-letter">
+    <div class="envelope-physical" aria-hidden="true"><div class="envelope-back"></div><img class="envelope-pocket" src="assets/envelope-paper.webp" width="2002" height="786" alt="" fetchpriority="high"><img class="envelope-flap" src="assets/envelope-paper.webp" width="2002" height="786" alt=""><p class="envelope-address" id="envelope-address">Для вашей особенной истории</p></div>
+    <button type="button" class="seal-button" id="open-story" aria-controls="story-preview" aria-expanded="false"><img src="assets/punsh-seal.webp" width="1254" height="1254" alt="" fetchpriority="high"><span>Открыть историю</span></button>
   </div>
+  <article class="story-preview" id="story-preview" aria-labelledby="demo-title" hidden>
+    <button type="button" class="close-story" id="close-story" aria-label="Закрыть историю">×</button>
+    <div class="demo-visual"><img id="demo-image" src="assets/envelope-gift-cover.webp" width="1122" height="1402" alt="Педролий — четыре подруги на диване"></div>
+    <div class="demo-copy"><p class="eyebrow" id="demo-eyebrow">Для вашего близкого человека</p><h2 id="demo-title" tabindex="-1">Эта история — <br>про вас.</h2><p id="demo-description">Ваша дружба, общие воспоминания и вы сами — герои отдельного мира. Такой подарок можно открыть одной ссылкой.</p><button type="button" class="button button-dark" id="demo-order">Хочу похожий подарок <span aria-hidden="true" class="arrow">↗</span></button><a class="demo-project-link" id="demo-project-link" href="https://pedroliy.пуншсерия.рф/" target="_blank" rel="noopener noreferrer">Открыть сайт-пример ↗</a><a class="demo-project-link" id="demo-ardmore-link" href="https://ardmore.пуншсерия.рф/" target="_blank" rel="noopener noreferrer" hidden>Открыть «Ардмор» ↗</a><a class="demo-project-link" id="demo-magic-link" href="https://волшебныймирлс.пуншсерия.рф/" target="_blank" rel="noopener noreferrer">Открыть «Волшебный мир» ↗</a><span class="demo-visual-caption" id="demo-visual-caption">Персональный проект / Педролий</span></div>
+  </article>
+</div>
+<div class="hero-below"><div class="story-selectors" role="group" aria-label="Для кого открыть историю"><button type="button" data-story="book" aria-pressed="false">Для читателя</button><button type="button" data-story="gift" aria-pressed="true">Для близкого</button><button type="button" data-story="business" aria-pressed="false">Для клиента</button></div><div class="hero-actions"><button type="button" class="button button-lemon" id="hero-order">Хочу создать свой <span aria-hidden="true" class="arrow">↗</span></button><a class="text-link" href="#works">Смотреть работы</a></div><p class="hero-price">Создание сайта — <b>от 7 900 ₽</b></p></div>
+<p class="sr-only" id="story-status" role="status" aria-live="polite"></p>
+</section>
+</div>
 
-  <div class="pin__stack">
-    <div class="panel panel--hero">
-      <div class="panel__text">
-        <p class="lead">Интерактивные сайты по мотивам книг и персональные сайты-подарки: с героями, музыкой, анимацией и сюрпризами.</p>
-        <p class="panel__actions"><a class="btn" href="#contact" data-magnet>Рассказать свою историю</a> <a class="tlink" href="#works">Посмотреть работы &rarr;</a></p>
-      </div>
-      <figure class="panel__ph panel__ph--a"><img src="img/p24.jpg" width="1600" height="2000" alt="Раскрытая старая книга на деревянном столе, страницы в мягком фокусе" fetchpriority="high"></figure>
-      <nav class="panel__links" aria-label="Разделы">
-        <a href="#series">Серии</a>
-        <a href="#who">Для кого</a>
-        <a href="#works">Работы</a>
-        <a href="#price">Цена</a>
-        <a href="#faq">Вопросы</a>
-      </nav>
+<section class="works-section section wrap" id="works" aria-labelledby="works-title"><div class="section-top"><div><p class="eyebrow">Откройте и почувствуйте</p><h2 id="works-title">Две истории. <br><em>Два разных мира.</em></h2></div><p class="section-aside">Посмотрите действующие проекты. <br>У каждой истории — собственное <br>настроение и характер.</p></div><div class="project-grid">
+<div class="project-group"><a class="project" href="https://general.пуншсерия.рф/" target="_blank" rel="noopener noreferrer"><div class="project-window"><div class="window-bar" aria-hidden="true"><span>● ● ●</span><span>КНИЖНЫЙ МИР</span><span>↗</span></div><img src="assets/general-site.webp" width="1348" height="926" alt="Сайт исторического романа «Не возвращайся, генерал»" loading="lazy"><span class="project-open">Открыть сайт ↗</span></div><div class="project-caption"><div><span class="tiny">01 / Сайт книги</span><h3>Не возвращайся, генерал</h3><p>Атмосфера романа, герои, сцены и знакомство с книгой.</p></div><span aria-hidden="true">↗</span></div></a><a class="text-link project-example-link" href="https://ardmore.пуншсерия.рф/" target="_blank" rel="noopener noreferrer">Еще один сайт для автора — «Ардмор» ↗</a></div>
+<div class="project-group"><a class="project" href="https://pedroliy.пуншсерия.рф/" target="_blank" rel="noopener noreferrer"><div class="project-window"><div class="window-bar" aria-hidden="true"><span>● ● ●</span><span>ПЕРСОНАЛЬНАЯ ИСТОРИЯ</span><span>↗</span></div><img class="pedroliy-cover" src="assets/pedroliy-friends-cover.webp" width="1832" height="883" alt="Персональный сайт «Педролий»" loading="lazy"><span class="project-open">Открыть сайт ↗</span></div><div class="project-caption"><div><span class="tiny">02 / Персональный проект</span><h3>Педролий</h3><p>Дружба становится вселенной — с героинями и собственными эпизодами.</p></div><span aria-hidden="true">↗</span></div></a><a class="text-link project-example-link" href="https://волшебныймирлс.пуншсерия.рф/" target="_blank" rel="noopener noreferrer">Еще один подарок для близкого — «Волшебный мир» ↗</a></div>
+</div></section>
+
+<section class="formats-section" id="formats" aria-labelledby="formats-title"><div class="format-intro section wrap"><p class="eyebrow">Три повода создать свой сайт</p><h2 id="formats-title">Что расскажет <br><em>ваша ссылка?</em></h2><p>О том, что вы придумали. О тех, кого любите. <br>О деле, в которое вкладываетесь.</p></div>
+<article class="service-story service-book" id="book" aria-labelledby="book-title"><div class="wrap service-layout"><div class="service-copy"><p class="eyebrow">01 / Для автора и его читателей</p><h2 id="book-title">Ваша книга — <br><em>целый мир.</em> <br>Пора его открыть.</h2><p>Покажите читателю героев и атмосферу романа еще до первой страницы. Соберем историю в одном месте и проведем от первого впечатления к чтению или покупке.</p><ul class="editorial-list"><li>Презентация книги или цикла</li><li>Герои, локации и атмосферные сцены</li><li>Отрывок и ссылки на чтение</li><li>Музыка, видео и интерактив — по задумке</li></ul><p class="service-price">Индивидуальный сайт — <b>от 7 900 ₽</b></p><button type="button" class="button button-dark" data-inquiry="Сайт для автора или книги">Открыть мир моей книги <span aria-hidden="true" class="arrow">↗</span></button></div><figure class="book-art"><span class="tiny">Характер. Атмосфера. Ваша история.</span><img src="assets/manhwa-couple.webp" width="1122" height="1402" alt="Иллюстрированные герои книжного мира" loading="lazy"><figcaption>Больше, <br><em>чем страницы.</em></figcaption></figure></div></article>
+<article class="service-story service-gift" id="gift" aria-labelledby="gift-title"><div class="wrap service-layout"><figure class="gift-art"><img src="assets/friendship-scene.webp" width="1023" height="1537" alt="Четыре героини персонального проекта в кинематографической сцене" loading="lazy"><figcaption><span class="tiny">Знакомые люди. Необычная история.</span><p>В главной роли — <em>вы.</em></p></figcaption></figure><div class="service-copy"><p class="eyebrow">02 / Для человека, который вам дорог</p><h2 id="gift-title">Целая история. <br><em>Для одного <br>человека.</em></h2><p>День рождения, годовщина, ваша дружба или признание. Превратим фотографии, важные слова и общие воспоминания в сайт, созданный специально для него.</p><ul class="editorial-list"><li>Ваши воспоминания и маленькие главы</li><li>Личные письма и любимая музыка</li><li>Вы и близкие — герои придуманных сцен</li><li>Скрытые послания и финальный сюрприз</li></ul><p class="service-price">Персональный подарок — <b>от 7 900 ₽</b></p><p class="small muted">Состав выбираем под человека и повод. Стоимость зависит от объема истории и интерактива.</p><button type="button" class="button button-dark" data-inquiry="Сайт в подарок">Создать особенный подарок <span aria-hidden="true" class="arrow">↗</span></button></div></div></article>
+<article class="service-story service-business" id="business" aria-labelledby="business-title"><div class="wrap service-layout"><div class="service-copy"><p class="eyebrow">03 / Для брендов, экспертов и команд</p><h2 id="business-title">Первое <br>впечатление. <br><em>Ваше.</em></h2><p>Когда нужно представить услугу, запустить продукт или собрать обращения — создадим страницу, которая объясняет ваше предложение и передает характер бренда.</p><ul class="editorial-list"><li>Структура под продукт и его аудиторию</li><li>Предложение, преимущества и ответы на вопросы</li><li>Выразительный визуал и версия для телефона</li><li>Понятный путь к заявке или обращению</li></ul><p class="service-price">Коммерческий лендинг — <b>от 7 900 ₽</b></p><p class="small">Размещение и подключения согласуем под задачи проекта.</p><button type="button" class="button button-lemon" data-inquiry="Коммерческий лендинг">Обсудить мой лендинг <span aria-hidden="true" class="arrow">↗</span></button></div><div class="business-art">
+  <a class="project" href="https://пуншсерия.рф/" target="_blank" rel="noopener noreferrer">
+    <div class="project-window">
+      <div class="window-bar" aria-hidden="true"><span>● ● ●</span><span>ПУНШ СЕРИЯ</span><span>↗</span></div>
+      <img class="studio-cover" src="assets/punsh-series-site.webp" width="1895" height="909" alt="Главная страница сайта «Пунш Серия»" loading="lazy">
+      <span class="project-open">Открыть сайт ↗</span>
     </div>
-
-    <div class="panel panel--b">
-      <figure class="panel__ph panel__ph--b"><img src="img/p1073.jpg" width="1600" height="2000" alt="Стена из раскрытых книг, вид сверху" loading="lazy"></figure>
-      <p class="panel__cap panel__cap--b">Автору: книга превращается в отдельный цифровой мир с персонажами, локациями, сценами и музыкой.</p>
-      <figure class="panel__ph panel__ph--c"><img src="img/p1062.jpg" width="1600" height="2000" alt="Мопс, закутанный в тёплый плед" loading="lazy"></figure>
-      <p class="panel__cap panel__cap--c">Дарящему: ваши воспоминания, фото и переписки становятся историей, где получатель — главный герой.</p>
-    </div>
-  </div>
+  </a>
+  <p class="business-art-note">Собственный лендинг студии</p>
+</div></div></article>
 </section>
 
-<!-- ============ СЕРИИ: названия проходят мимо удержанного кадра ============ -->
-<section class="series" id="series" aria-labelledby="seriesH">
-  <div class="series__list">
-    <h2 id="seriesH" class="head">Серии</h2>
-    <ol>
-      <li><a href="#price" data-img="img/p24.jpg" data-kind="Интерактивный сайт для автора книги" data-price="от 7 900 ₽" data-base="book">Сайт книги</a></li>
-      <li><a href="#price" data-img="img/p796.jpg" data-kind="Небольшой интерактивный сайт" data-price="от 7 900 ₽" data-base="scene">Мини-сцена</a></li>
-      <li><a href="#price" data-img="img/p41.jpg" data-kind="Первый этап интерактивной истории" data-price="от 19 900 ₽" data-base="pilot">Пилот</a></li>
-      <li><a href="#price" data-img="img/p1002.jpg" data-kind="Полноценный сайт-подарок" data-price="39 900 ₽" data-base="ep1">Первый эпизод</a></li>
-      <li><a href="#price" data-img="img/p609.jpg" data-kind="Расширенный сайт-подарок" data-price="69 900 ₽" data-base="series">Личная серия</a></li>
-      <li><a href="#price" data-img="img/p564.jpg" data-kind="Большой сайт из нескольких эпизодов" data-price="119 900 ₽" data-base="season">Целый сезон</a></li>
-      <li><a href="#extras" data-img="img/p20.jpg" data-kind="ИИ-фильм, вебтун, персонажи" data-price="от 4 900 ₽">ИИ-видео и герои</a></li>
-      <li><a href="#extras" data-img="img/p367.jpg" data-kind="Персональный ИИ-бот" data-price="от 12 000 ₽">ИИ-бот</a></li>
-    </ol>
+<section class="pricing-section section wrap" id="pricing" aria-labelledby="pricing-title">
+  <div class="section-intro intro-split"><div><p class="eyebrow">Начнем с подходящего формата</p><h2 id="pricing-title">Большая идея. <br><span class="serif-accent">Понятный старт.</span></h2></div><p class="intro-aside">Состав, стоимость и сроки <br>согласуем до начала работы. <br>Вы знаете, что заказываете.</p></div>
+  <div class="price-grid">
+    <article class="offer offer-book"><span class="tiny">01 / Для книги</span><h3>Мир вашей книги</h3><p class="offer-description">Индивидуальный сайт для знакомства читателя с романом или автором.</p><p class="offer-price">от <strong>7 900</strong> ₽</p><ul><li>Структура и дизайн под историю</li><li>Презентация книги и героев</li><li>Отрывок и ссылки на чтение</li><li>Адаптация под телефон</li></ul><button class="button button-dark" data-inquiry="Сайт для автора или книги">Обсудить книгу <span aria-hidden="true" class="arrow">↗</span></button><p class="offer-fine">Создание новых иллюстраций, видео и дополнительный интерактив рассчитываем по составу.</p></article>
+    <article class="offer offer-gift"><span class="tiny">02 / Для близкого человека</span><h3>Персональный подарок</h3><p class="offer-description">Ваши воспоминания и важные слова в истории, созданной для одного человека.</p><p class="offer-price">от <strong>7 900</strong> ₽</p><ul><li>Концепция под человека и повод</li><li>История из ваших материалов</li><li>Личные послания и сюрпризы</li><li>Подарок, который откроют по ссылке</li></ul><button class="button button-outline" data-inquiry="Сайт в подарок">Обсудить подарок <span aria-hidden="true" class="arrow">↗</span></button><p class="offer-fine">Стоимость зависит от количества сцен, материалов и интерактивных элементов.</p></article>
+    <article class="offer offer-business"><span class="tiny">03 / Для бизнеса</span><h3>Коммерческий лендинг</h3><p class="offer-description">Страница для продукта, услуги или эксперта с понятным путем к обращению.</p><p class="offer-price">от <strong>7 900</strong> ₽</p><ul><li>Структура и подача предложения</li><li>Дизайн в характере бренда</li><li>Блоки для принятия решения</li><li>Контакты и согласованный путь заявки</li></ul><button class="button button-outline" data-inquiry="Коммерческий лендинг">Обсудить задачу <span aria-hidden="true" class="arrow">↗</span></button><p class="offer-fine">Объем страницы, тексты, визуалы и подключения определяем на старте.</p></article>
   </div>
-  <aside class="series__aside" aria-live="polite">
-    <div class="series__frame">
-      <img class="on" src="img/p24.jpg" width="800" height="1000" alt="">
-      <img src="img/p796.jpg" width="800" height="1000" alt="" loading="lazy">
-      <img src="img/p41.jpg" width="800" height="1000" alt="" loading="lazy">
-      <img src="img/p1002.jpg" width="800" height="1000" alt="" loading="lazy">
-      <img src="img/p609.jpg" width="800" height="1000" alt="" loading="lazy">
-      <img src="img/p564.jpg" width="800" height="1000" alt="" loading="lazy">
-      <img src="img/p20.jpg" width="800" height="1000" alt="" loading="lazy">
-      <img src="img/p367.jpg" width="800" height="1000" alt="" loading="lazy">
-    </div>
-    <p class="series__facts"><span id="sKind">Интерактивный сайт для автора книги</span> <b id="sPrice">от 7 900 ₽</b></p>
-  </aside>
+  <p class="pricing-footnote">Не знаете, какой формат выбрать? Расскажите об идее — предложу подходящий состав проекта.</p>
 </section>
 
-<!-- ============ ДЛЯ КОГО: липкое фото, активный список ============ -->
-<section class="who" id="who" aria-labelledby="whoH">
-  <div class="who__ph">
-    <img class="on" src="img/p1073.jpg" width="1200" height="1500" alt="Стена из раскрытых книг" loading="lazy">
-    <img src="img/p1062.jpg" width="1200" height="1500" alt="Мопс в пледе" loading="lazy">
-    <img src="img/p20.jpg" width="1200" height="1500" alt="Рабочий стол с ноутбуком, книгами и блокнотом" loading="lazy">
-  </div>
-  <div class="who__body">
-    <h2 id="whoH" class="head">Кому мы делаем сайты</h2>
-    <ul class="who__list">
-      <li class="is-active" tabindex="0">
-        <div class="who__row"><span>Автору книги</span><small>от 7 900 ₽</small></div>
-        <p>Книга теряется среди тысяч других, а вымышленный мир трудно показать одним постом. Мы делаем интерактивную презентацию: герои, локации, анимация, музыка и сцены. Её можно использовать для продвижения и привлечения читателей.</p>
-      </li>
-      <li tabindex="0">
-        <div class="who__row"><span>Тому, кто дарит</span><small>от 7 900 ₽</small></div>
-        <p>Стандартные подарки уже никого не удивляют. Мы собираем сайт по истории человека: фотографии, воспоминания, переписки, музыка, видео, мини-игры и секретные разделы. Он вызывает эмоции и остаётся на память.</p>
-      </li>
-      <li tabindex="0">
-        <div class="who__row"><span>Бренду и блогеру</span><small>по расчёту</small></div>
-        <p>Шаблонные сайты и визуалы сливаются с конкурентами. Делаем лендинг или промосайт с индивидуальным дизайном, ИИ-видео и персонажами, чтобы проект запоминался.</p>
-      </li>
-    </ul>
-    <p class="who__note">Один шаблон на всех мы не используем: каждый сайт строится под конкретную историю, человека или произведение. Дизайн, разработка, сценарий, ИИ-визуал, видео и интерактив собираются в одном проекте.</p>
-  </div>
-</section>
+<section class="extras-section section"><div class="wrap extras-layout"><div><p class="eyebrow">Детали, которые добавляют характер</p><h2>А если <br><em>еще немного магии?</em></h2><p>Персонажи, визуальные сцены и видео — вместе с сайтом или как отдельная история.</p></div><div class="extra-list"><button type="button" data-inquiry="ИИ-видео"><span><b>ИИ-видео и мини-фильмы</b><small>Сцены, поздравления и буктрейлеры</small></span><span>от 5 900 ₽ ↗</span></button><button type="button" data-inquiry="Мини-вебтун"><span><b>Мини-вебтун</b><small>История в последовательности кадров</small></span><span>от 5 900 ₽ ↗</span></button><button type="button" data-inquiry="Визуал и персонажи"><span><b>Персонажи и иллюстрации</b><small>Внешность, образы, постеры</small></span><span>Обсудить ↗</span></button></div></div></section>
 
-<!-- ============ РАБОТЫ ============ -->
-<section class="works" id="works" aria-labelledby="worksH">
-  <h2 id="worksH" class="head">Работы, которые уже живут в сети</h2>
-  <div class="works__grid">
-    <article class="work work--a">
-      <a class="work__ph" href="https://general.пуншсерия.рф/" target="_blank" rel="noopener" aria-label="Открыть сайт «Не возвращайся, генерал»"><img src="img/work-general.webp" width="1122" height="1402" alt="Обложка романа «Не возвращайся, генерал»: пара за прозрачной шторой под дождём" loading="lazy"></a>
-      <h3 class="work__name">Не возвращайся, генерал</h3>
-      <p>Интерактивный сайт по историческому роману Розы Френд: фрагменты, визуальные сцены и будущая игра.</p>
-      <a class="tlink" href="https://general.пуншсерия.рф/" target="_blank" rel="noopener">Открыть сайт &rarr;</a>
-    </article>
-    <article class="work work--b">
-      <a class="work__ph" href="https://ardmore.пуншсерия.рф/" target="_blank" rel="noopener" aria-label="Открыть сайт «Ардмор»"><img src="img/work-ardmore.webp" width="1402" height="1122" alt="Сцена из вселенной «Ардмор»: невеста с рыжими волосами за пиршественным столом при свечах" loading="lazy"></a>
-      <h3 class="work__name">Ардмор</h3>
-      <p>Книжная вселенная двух романов Rosa: герои, избранные фрагменты, иллюстрации и ожившие сцены.</p>
-      <a class="tlink" href="https://ardmore.пуншсерия.рф/" target="_blank" rel="noopener">Открыть сайт &rarr;</a>
-    </article>
-    <article class="work work--c">
-      <a class="work__ph" href="https://pedroliy.пуншсерия.рф/" target="_blank" rel="noopener" aria-label="Открыть сайт «Педролий»"><img src="img/work-pedroliy.webp" width="1122" height="1402" alt="Постер «Педролий»: четыре подруги на диване в уютном кафе" loading="lazy"></a>
-      <h3 class="work__name">Педролий</h3>
-      <p>Сайт-подарок о четырёх подругах, любимых историях и дружбе без финальных титров.</p>
-      <a class="tlink" href="https://pedroliy.пуншсерия.рф/" target="_blank" rel="noopener">Открыть сайт &rarr;</a>
-    </article>
-    <article class="work work--d">
-      <a class="work__ph" href="https://волшебныймирлс.пуншсерия.рф/" target="_blank" rel="noopener" aria-label="Открыть сайт «Волшебный мир»"><img src="img/work-magic.webp" width="1672" height="941" alt="Двое юных героев смотрят на сказочный замок над ночным озером" loading="lazy"></a>
-      <h3 class="work__name">Волшебный мир</h3>
-      <p>Персональный сайт-подарок: прибытие в замок, выбор своего пути и история, которая начинается с первой страницы.</p>
-      <a class="tlink" href="https://волшебныймирлс.пуншсерия.рф/" target="_blank" rel="noopener">Открыть сайт &rarr;</a>
-    </article>
-  </div>
-  <p class="works__more">Все работы собраны на основном сайте студии: <a href="https://пуншсерия.рф/" target="_blank" rel="noopener">пуншсерия.рф</a></p>
-</section>
+<section class="about-section section wrap" aria-labelledby="about-title"><div class="about-mark"><img src="assets/punsh-seal.webp" width="1230" height="1254" alt="Восковая печать PUNSH" loading="lazy"><p>От первой идеи <br><em>до вашей ссылки.</em></p></div><div class="about-copy"><p class="eyebrow">За печатью PUNSH — человек</p><h2 id="about-title">Привет. <br><em>Я Анастасия.</em></h2><p>Я создаю сайты и визуальные истории. Соединяю дизайн, тексты, ИИ-визуал и сборку, чтобы ваши материалы сложились в цельный проект.</p><p>Мы общаемся напрямую: от первого рассказа об идее до согласования готового сайта. Мне важно услышать, что делает вашу историю вашей.</p><a class="text-link" href="#contact">Давайте познакомимся <span aria-hidden="true" class="arrow">↗</span></a></div></section>
 
-<!-- ============ КАК: один глагол за раз ============ -->
-<section class="how" id="how" aria-labelledby="howH">
-  <div class="how__step how__step--1">
-    <img src="img/p1062.jpg" width="1600" height="2000" alt="" loading="lazy">
-    <h2 id="howH" class="head how__h">Как рождается серия</h2>
-    <p class="how__word" aria-hidden="true"><span>Слушаем</span></p>
-    <p class="how__cap">Вы рассказываете историю: книгу, героя, событие, человека. Присылаете фото, переписки, любимую музыку.</p>
-  </div>
-  <div class="how__step how__step--2">
-    <img src="img/p24.jpg" width="1600" height="2000" alt="" loading="lazy">
-    <p class="how__word" aria-hidden="true"><span>Пишем</span></p>
-    <p class="how__cap">Превращаем её в сценарий сайта: сцены, диалоги, секретные комнаты и сюрпризы.</p>
-  </div>
-  <div class="how__step how__step--3">
-    <img src="img/manuscript.jpg" width="1920" height="2975" alt="" loading="lazy">
-    <p class="how__word" aria-hidden="true"><span>Рисуем</span></p>
-    <p class="how__cap">ИИ-визуал, персонажи, видео и анимация в едином стиле вашей истории.</p>
-  </div>
-  <div class="how__step how__step--4">
-    <img src="img/p367.jpg" width="1600" height="2000" alt="" loading="lazy">
-    <p class="how__word" aria-hidden="true"><span>Оживляем</span></p>
-    <p class="how__cap">Собираем интерактивный сайт: музыка, мини-игры, скрытые разделы. Читатель или получатель становится героем.</p>
-  </div>
-</section>
+<section class="process-section section" id="process" aria-labelledby="process-title"><div class="wrap"><div class="section-top"><div><p class="eyebrow">Все начинается с нескольких слов</p><h2 id="process-title">Как ваша идея <br><em>обретает форму</em></h2></div></div><ol class="steps-grid"><li><span>01</span><h3>Расскажите об идее</h3><p>Для кого нужен сайт, что хочется показать и к какой дате. Можно своими словами.</p></li><li><span>02</span><h3>Согласуем основу</h3><p>Состав, стиль, тексты, стоимость и сроки — до начала сборки.</p></li><li><span>03</span><h3>Создадим и проверим</h3><p>Соберу страницу, согласую ее с вами, проверю телефон, компьютер, кнопки и ссылки.</p></li><li><span>04</span><h3>Подготовим запуск</h3><p>Обсудим домен, размещение и передачу. У вашей идеи появится собственная ссылка.</p></li></ol></div></section>
 
-<!-- ============ ЦЕНА: билет-конструктор ============ -->
-<section class="price" id="price" aria-labelledby="priceH">
-  <h2 id="priceH" class="head">Соберите свою серию</h2>
-  <p class="price__lead">Выберите основу и добавки: итог пересчитается сразу. Окончательную цену назовём после разговора, она зависит от сложности.</p>
+<section class="faq-section section wrap" aria-labelledby="faq-title"><div><p class="eyebrow">Перед первым сообщением</p><h2 id="faq-title">Остались <br><span class="serif-accent">вопросы?</span></h2><p class="faq-invite">Можно просто <a href="https://t.me/Punsh_E" target="_blank" rel="noopener noreferrer">написать мне ↗</a></p></div><div class="faq-list">
+<details><summary>У меня пока только идея. Этого достаточно?<span aria-hidden="true">+</span></summary><p>Да. Расскажите, для кого нужен сайт и какого впечатления вы хотите добиться. Я помогу определить структуру и материалы для старта.</p></details>
+<details><summary>Что нужно подготовить?<span aria-hidden="true">+</span></summary><p>Для книги — описание романа, информацию о героях, отрывок и ссылки на чтение. Для подарка — фотографии, воспоминания и важные слова. Для бизнеса — описание продукта, аудитории и задачи. Если чего-то не хватает, обсудим, как подготовить материалы.</p></details>
+<details><summary>Сколько времени займет создание?<span aria-hidden="true">+</span></summary><p>Срок зависит от объема страницы, готовности материалов, видео и интерактивных элементов. Точную дату согласуем до начала работы. Если сайт нужен к событию, напишите об этом сразу.</p></details>
+<details><summary>Кто оплачивает домен и хостинг?<span aria-hidden="true">+</span></summary><p>Размещение обсуждаем отдельно: можно использовать ваш домен и хостинг или подобрать подходящий вариант. До запуска согласуем, кто оплачивает эти услуги, срок размещения и доступ к файлам сайта.</p></details>
+<details><summary>Как проходит оплата?<span aria-hidden="true">+</span></summary><p>Работа начинается после согласования состава проекта, стоимости, сроков и предоплаты. Размер предоплаты и дальнейшие этапы оплаты фиксируем до старта.</p></details>
+<details><summary>Можно дополнить сайт позже?<span aria-hidden="true">+</span></summary><p>Да, можно обсудить новые сцены, главы и разделы. Объем обновления, стоимость и условия дальнейшего сопровождения согласуем отдельно.</p></details>
+</div></section>
 
-  <form class="ticket" id="ticket" autocomplete="off">
-    <div class="ticket__main">
-      <h3 class="ticket__name" id="tName">Первый эпизод</h3>
-      <fieldset class="chips" id="baseSet">
-        <legend>Основа</legend>
-        <label><input type="radio" name="base" value="book" data-price="7900" data-from="1" data-name="Сайт книги"><span>Сайт книги <em>от 7 900</em></span></label>
-        <label><input type="radio" name="base" value="scene" data-price="7900" data-from="1" data-name="Мини-сцена"><span>Мини-сцена <em>от 7 900</em></span></label>
-        <label><input type="radio" name="base" value="pilot" data-price="19900" data-from="1" data-name="Пилот"><span>Пилот <em>от 19 900</em></span></label>
-        <label><input type="radio" name="base" value="ep1" data-price="39900" data-name="Первый эпизод" checked><span>Первый эпизод <em>39 900</em></span></label>
-        <label><input type="radio" name="base" value="series" data-price="69900" data-name="Личная серия"><span>Личная серия <em>69 900</em></span></label>
-        <label><input type="radio" name="base" value="season" data-price="119900" data-name="Целый сезон"><span>Целый сезон <em>119 900</em></span></label>
-      </fieldset>
-      <fieldset class="chips" id="extras">
-        <legend>Добавить</legend>
-        <label><input type="checkbox" name="x" value="scene" data-price="2500" data-name="Дополнительная сцена"><span>Ещё сцена <em>2 500</em></span></label>
-        <label><input type="checkbox" name="x" value="room" data-price="3900" data-name="Секретная комната"><span>Секретная комната <em>3 900</em></span></label>
-        <label><input type="checkbox" name="x" value="game" data-price="4900" data-name="Мини-игра"><span>Мини-игра <em>4 900</em></span></label>
-        <label><input type="checkbox" name="x" value="video" data-price="5900" data-name="ИИ-видеосцена"><span>ИИ-видеосцена <em>5 900</em></span></label>
-        <label><input type="checkbox" name="x" value="img5" data-price="2900" data-name="Пять ИИ-изображений"><span>5 ИИ-картинок <em>2 900</em></span></label>
-        <label><input type="checkbox" name="x" value="mode" data-price="6900" data-name="Второй визуальный режим"><span>Второй режим сайта <em>6 900</em></span></label>
-        <label><input type="checkbox" name="rush" value="rush" data-name="Срочное выполнение"><span>Срочно <em>+30%</em></span></label>
-      </fieldset>
-      <ul class="ticket__lines" id="tLines"></ul>
-    </div>
-    <div class="ticket__stub">
-      <p class="ticket__price"><small id="tFrom"></small><b id="tTotal">39 900</b> ₽</p>
-      <a class="ticket__go" href="#contact" id="tGo">Обсудить этот заказ</a>
-    </div>
-  </form>
-</section>
-
-<!-- ============ ВОПРОСЫ ============ -->
-<section class="faq" id="faq" aria-labelledby="faqH">
-  <div class="faq__col">
-    <h2 id="faqH" class="head">Вопросы</h2>
-    <p class="faq__facts">Работаем из Кемеровской области, дистанционно, по всей России.<br>Писать удобнее всего в Telegram: <a href="https://t.me/Punsh_E" target="_blank" rel="noopener">@Punsh_E</a>.<br>Поддержку и развитие сайта после запуска тоже берём на себя.</p>
-    <div class="faq__acc">
-      <details>
-        <summary>Это дорого</summary>
-        <p>Мы не продаём шаблон, а делаем сайт под одну историю. Поэтому есть вход от 7 900 ₽ (мини-сцена): можно начать с малого, а потом добавлять сцены, игры и секретные разделы.</p>
-      </details>
-      <details>
-        <summary>Как будет выглядеть готовый сайт?</summary>
-        <p>Посмотрите живые работы в разделе <a href="#works">«Работы»</a>, например <a href="https://general.пуншсерия.рф/" target="_blank" rel="noopener">«Не возвращайся, генерал»</a>. Перед сборкой мы обсуждаем сценарий и стиль, так что результат не будет сюрпризом, если вы не заказывали сюрприз.</p>
-      </details>
-      <details>
-        <summary>Что нужно от меня?</summary>
-        <p>История и материалы: фотографии, воспоминания, переписки, музыка, описание героев. Если материала мало, поможем придумать структуру.</p>
-      </details>
-      <details>
-        <summary>Сайт можно подарить и сохранить?</summary>
-        <p>Да, сайт-подарок создан, чтобы остаться на память. Его можно открыть по ссылке в день события и возвращаться к нему позже.</p>
-      </details>
-      <details>
-        <summary>Можно ли сделать быстрее?</summary>
-        <p>Да, срочное выполнение стоит +30% к итоговой цене. Сроки называем после обсуждения объёма.</p>
-      </details>
-      <details>
-        <summary>А если нужны новые разделы позже?</summary>
-        <p>Это обычная история: добавляем эпизоды, сцены, видео и новые разделы, а также ведём сайт и техподдержку.</p>
-      </details>
-    </div>
-    <p class="faq__end"><a class="btn" href="#contact" data-magnet>Написать нам</a> <a class="tlink" href="https://пуншсерия.рф/" target="_blank" rel="noopener">Сайт студии &rarr;</a></p>
-  </div>
-  <div class="faq__ph">
-    <img class="faq__tall" src="img/p20.jpg" width="1200" height="1600" alt="Рабочий стол: ноутбук, книги, блокнот и телефон" loading="lazy">
-    <img class="faq__sq" src="img/p367.jpg" width="800" height="800" alt="Рука держит электронную книгу" loading="lazy">
-  </div>
-</section>
-
-<!-- ============ КОНТАКТ ============ -->
-<section class="contact" id="contact" aria-labelledby="contactH">
-  <img class="contact__bg" src="img/manuscript.jpg" width="1920" height="2975" alt="Страница старинной рукописи с иллюстрацией сцены во дворце" loading="lazy">
-  <div class="contact__card">
-    <h2 id="contactH" class="card__h">Расскажите историю</h2>
-    <form id="leadForm" class="form" novalidate>
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="order" id="orderField">
-      <label>Как вас зовут<input type="text" name="name" autocomplete="name" required></label>
-      <label>Telegram или телефон<input type="text" name="contact" autocomplete="tel" required></label>
-      <label>О чём сайт<textarea name="message" rows="3" placeholder="Книга, человек или событие, повод и дата"></textarea></label>
-      <label class="form__ok"><input type="checkbox" name="agree" required> <span>Согласен на обработку данных, <a href="privacy.html" target="_blank">политика</a></span></label>
-      <button type="submit" class="form__btn" data-magnet>Отправить заявку</button>
-      <p class="form__order" id="orderNote"></p>
-    </form>
-    <p class="card__links"><a href="https://t.me/Punsh_E" target="_blank" rel="noopener">Telegram</a> <a href="https://vk.ru/npynsh" target="_blank" rel="noopener">ВКонтакте</a> <a href="https://instagram.com/ls_punshstudio" target="_blank" rel="noopener">Instagram</a></p>
-  </div>
-</section>
-
+<section class="contact-section section" id="contact" aria-labelledby="contact-title"><div class="wrap contact-layout"><div class="contact-copy"><p class="eyebrow">Теперь — ваша история</p><h2 id="contact-title">У вас есть идея. <br>У <em>неё</em> будет <br>своя ссылка.</h2><p>Расскажите, для кого нужен проект и что вы хотите создать. Для первого сообщения достаточно вашей задумки.</p><a class="button button-dark" data-telegram href="https://t.me/Punsh_E" target="_blank" rel="noopener noreferrer">Написать Пунш <span aria-hidden="true" class="arrow">↗</span></a><p class="contact-sign">Есть идея? Уже интересно. ♡</p></div><form class="inquiry-form" id="inquiry-form"><div class="form-heading"><span class="tiny">Небольшое знакомство</span><span aria-hidden="true">↗</span></div><div class="field-row"><div class="field"><label for="client-name">Как вас зовут?</label><input id="client-name" name="name" type="text" autocomplete="given-name" maxlength="80" placeholder="Ваше имя" required></div><div class="field"><label for="client-contact">Где вам ответить?</label><input id="client-contact" name="contact" type="text" autocomplete="off" maxlength="160" placeholder="@telegram или другой контакт" required></div></div><div class="field"><label for="project-kind">Какой сайт вам нужен?</label><select id="project-kind" name="kind"><option value="Пока хочу обсудить идею">Пока хочу обсудить идею</option><option>Сайт для автора или книги</option><option>Сайт в подарок</option><option>Коммерческий лендинг</option><option>ИИ-видео</option><option>Мини-вебтун</option><option>Визуал и персонажи</option></select></div><div class="field"><label for="project-idea">Расскажите об идее</label><textarea id="project-idea" name="idea" rows="4" maxlength="4000" placeholder="Для кого сайт, что хочется создать и к какой дате?" required></textarea></div><button class="button button-dark form-submit" type="submit">Подготовить заявку <span aria-hidden="true" class="arrow">↗</span></button><p class="form-note">Вы проверите текст и отправите его самостоятельно в Telegram.</p><p class="privacy-note"><button type="button" class="inline-button" data-dialog="privacy-dialog">Как используются данные</button></p><noscript><p>Для подготовки текста включите JavaScript или напишите мне по ссылке Telegram.</p></noscript></form></div></section>
 </main>
-
-<footer class="foot">
-  <p class="foot__name" aria-hidden="true"><span>Punsh</span> <span>Studio</span></p>
-  <div class="foot__row">
-    <p>Кемеровская область, работаем по всей России</p>
-    <p><a href="privacy.html">Политика конфиденциальности</a></p>
-    <p class="foot__cr">Фото: Alejandro Escamilla, Patrick Tomasso, Matthew Wiebe, James Tarbotton, Aleks Dorohovich, Colton Brown, Nithya Ramanujam, Jeremy Cai, Sebastian Boguszewicz, NASA — Unsplash через picsum.photos. Рукопись «Бахрам посещает белый павильон» (Haft Paykar, Шираз, XVI век) — Cleveland Museum of Art, CC0, Wikimedia Commons.</p>
-    <p>&copy; <span id="year">2026</span> Punsh Studio</p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+<footer class="footer wrap"><a class="brand" href="#top" aria-label="PUNSH STUDIO — наверх">PUNSH <span>STUDIO</span></a><p>Сайты для книг, подарков <br>и вашего бизнеса</p><nav aria-label="Ссылки в подвале"><a href="#works">Работы</a><a data-telegram href="https://t.me/Punsh_E" target="_blank" rel="noopener noreferrer">Telegram ↗</a><button type="button" class="inline-button" data-dialog="privacy-dialog">О данных</button></nav><a class="back-top" href="#top" aria-label="Наверх">↑</a></footer>
+<dialog class="modal brief-modal" id="brief-dialog" aria-labelledby="brief-title"><button type="button" class="modal-close" data-close aria-label="Закрыть заявку">×</button><p class="eyebrow">Осталось познакомиться</p><h2 id="brief-title">Ваша заявка готова</h2><p>Проверьте текст, скопируйте и отправьте его мне в Telegram.</p><label for="brief-text" class="sr-only">Текст вашей заявки</label><textarea id="brief-text" readonly rows="9"></textarea><div class="brief-actions"><button type="button" class="button button-dark" id="copy-brief">Скопировать текст <span aria-hidden="true" class="arrow">↗</span></button><a class="button button-outline" href="https://t.me/Punsh_E" target="_blank" rel="noopener noreferrer">Открыть Telegram <span aria-hidden="true" class="arrow">↗</span></a></div><button type="button" class="inline-button download-brief" id="download-brief">Скачать заявку текстовым файлом</button><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p><p class="small muted">Заявка еще не отправлена. Отправьте скопированный текст в диалоге с @Punsh_E.</p></dialog>
+<dialog class="modal" id="privacy-dialog" aria-labelledby="privacy-title"><button type="button" class="modal-close" data-close aria-label="Закрыть информацию о данных">×</button><p class="eyebrow">О ваших данных</p><h2 id="privacy-title">Вы решаете, <br>что отправить</h2><p>Форма готовит текст только в этой вкладке браузера. Содержимое полей не отправляется на сервер и не записывается в базу заявок.</p><p>Вы можете скопировать или скачать текст и самостоятельно отправить его в Telegram. При переходе в Telegram действуют правила обработки данных этого сервиса.</p><p>Не указывайте пароли, платежные данные и сведения, которые не нужны для обсуждения проекта.</p><button type="button" class="button button-dark" data-close>Понятно</button></dialog>
+<div class="mobile-order-bar" id="mobile-order-bar" hidden><span>PUNSH STUDIO<small>Начнем с вашей идеи</small></span><button type="button" data-order-selected>Обсудить проект ↗</button></div>
+</body></html>
