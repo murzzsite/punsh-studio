@@ -6,7 +6,12 @@
   const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scrollBehavior = () => reducedMotion() ? 'instant' : 'smooth';
   const telegramUrl = window.PUNSH_CONFIG?.telegramUrl || 'https://t.me/Punsh_E';
+  const guideBotUrl = window.PUNSH_CONFIG?.guideBotUrl || 'https://t.me/punshRF_bot';
+  const telegramChannelUrl = window.PUNSH_CONFIG?.telegramChannelUrl || 'https://t.me/punsh_RF_Ls';
+  const leadEndpoint = window.PUNSH_CONFIG?.leadEndpoint || 'https://lead-relay.leestygpt.workers.dev/lead/LGKYQLXNPA';
   $$('[data-telegram]').forEach(link => { link.href = telegramUrl; });
+  $$('[data-guide-bot]').forEach(link => { link.href = guideBotUrl; });
+  $$('[data-telegram-channel]').forEach(link => { link.href = telegramChannelUrl; });
 
   const nav = $('#navigation');
   const menu = $('.menu-toggle');
@@ -152,13 +157,55 @@
     } else closeStory();
   });
 
-  const goToInquiry = kind => {
+  const setInquiryEstimate = summary => {
+    $('#order-summary').value = summary;
+    $('#selected-estimate-text').textContent = summary;
+    $('#selected-estimate').hidden = !summary;
+  };
+  const goToInquiry = (kind, estimate = '') => {
     const storyKey = Object.keys(stories).find(key => stories[key].inquiry === kind);
     if (storyKey) renderStory(storyKey);
     $('#project-kind').value = kind;
+    setInquiryEstimate(estimate);
     $('#contact').scrollIntoView({behavior:scrollBehavior(), block:'start'});
     $('#client-name').focus({preventScroll:true});
   };
+  $('#clear-estimate').addEventListener('click', () => setInquiryEstimate(''));
+
+  const estimateBase = $('#estimate-base');
+  const estimateExtras = $$('[data-estimate-extra]');
+  const estimateRush = $('#estimate-rush');
+  const formatPrice = amount => new Intl.NumberFormat('ru-RU').format(amount);
+  const calculateEstimate = () => {
+    const base = estimateBase.selectedOptions[0];
+    $('#estimate-base-description').textContent = base.dataset.description;
+    const selectedExtras = estimateExtras.filter(input => input.checked);
+    let total = Number(base.dataset.price) + selectedExtras.reduce((sum, input) => sum + Number(input.dataset.price), 0);
+    const lines = [base.dataset.name, ...selectedExtras.map(input => input.value)];
+    if (estimateRush.checked) {
+      total = Math.round(total * 1.3 / 100) * 100;
+      lines.push('Срочное выполнение +30%');
+    }
+    const price = (base.dataset.from ? 'от ' : '') + formatPrice(total) + ' ₽';
+    $('#estimate-total').textContent = price;
+    $('#estimate-lines').replaceChildren(...lines.map(text => {
+      const line = document.createElement('li');
+      line.textContent = text;
+      return line;
+    }));
+    return {
+      kind: base.dataset.kind,
+      summary: 'Предварительный расчёт: ' + lines.join(' + ') + '. Стоимость: ' + price + '. Итоговую цену согласуем после обсуждения.'
+    };
+  };
+  [estimateBase, ...estimateExtras, estimateRush].forEach(input => input.addEventListener('change', calculateEstimate));
+  $('#estimate-transfer').addEventListener('click', () => {
+    const estimate = calculateEstimate();
+    goToInquiry(estimate.kind, estimate.summary);
+  });
+  calculateEstimate();
+  $('#estimate-controls').disabled = false;
+  $('#estimate-transfer').disabled = false;
   $$('[data-inquiry]').forEach(button => button.addEventListener('click', () => goToInquiry(button.dataset.inquiry)));
   $('#hero-order').addEventListener('click', () => goToInquiry(stories[selected].inquiry));
   $('#demo-order').addEventListener('click', () => goToInquiry(stories[selected].inquiry));
@@ -187,39 +234,66 @@
   }));
 
   const form = $('#inquiry-form');
+  const submitButton = $('.form-submit', form);
+  const submitLabel = submitButton.firstChild;
+  const idleLabel = submitLabel.textContent;
+  const formStatus = $('#form-status');
+  const formControls = $$('input, select, textarea', form);
   $$('input, textarea', form).forEach(field => field.addEventListener('input', () => field.setCustomValidity('')));
-  form.addEventListener('submit', event => {
+
+  form.addEventListener('submit', async event => {
     event.preventDefault();
+    if (submitButton.disabled || form.elements._gotcha.value) return;
+
     const fields = ['client-name','client-contact','project-idea'].map(id => document.getElementById(id));
-    let valid = true;
     fields.forEach(field => {
       field.setCustomValidity(field.value.trim() ? '' : 'Пожалуйста, заполните это поле.');
-      if (!field.checkValidity()) valid = false;
     });
-    if (!valid) { form.reportValidity(); return; }
-    const name = $('#client-name').value.trim();
-    const contact = $('#client-contact').value.trim();
-    const kind = $('#project-kind').value;
-    const idea = $('#project-idea').value.trim();
-    $('#brief-text').value = `Здравствуйте, Пунш! Хочу обсудить проект.\n\nМеня зовут: ${name}\nСвязаться со мной: ${contact}\nФормат: ${kind}\n\nМоя идея:\n${idea}`;
-    $('#copy-status').textContent = '';
-    $('#brief-dialog').showModal();
-  });
-  $('#copy-brief').addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText($('#brief-text').value);
-      $('#copy-status').textContent = 'Текст скопирован. Откройте Telegram и вставьте его в сообщение.';
-    } catch {
-      $('#brief-text').focus();
-      $('#brief-text').select();
-      $('#copy-status').textContent = 'Текст выделен. Скопируйте его вручную и отправьте в Telegram.';
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
     }
-  });
-  $('#download-brief').addEventListener('click', () => {
-    const url = URL.createObjectURL(new Blob(['\uFEFF' + $('#brief-text').value],{type:'text/plain;charset=utf-8'}));
-    const link = document.createElement('a');
-    link.href = url; link.download = 'punsh-project.txt';
-    document.body.append(link); link.click(); link.remove();
-    setTimeout(() => URL.revokeObjectURL(url),1000);
+
+    const payload = {
+      name: $('#client-name').value.trim(),
+      contact: $('#client-contact').value.trim(),
+      message: 'Формат: ' + $('#project-kind').value + '\n\n' + ($('#order-summary').value ? $('#order-summary').value + '\n\n' : '') + $('#project-idea').value.trim()
+    };
+
+    submitButton.disabled = true;
+    submitLabel.textContent = 'Отправляем… ';
+    formControls.forEach(control => { control.disabled = true; });
+    form.setAttribute('aria-busy', 'true');
+    formStatus.textContent = 'Отправляем вашу заявку…';
+    delete formStatus.dataset.state;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+
+    try {
+      const response = await fetch(leadEndpoint, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error('Lead submission failed');
+      if ((response.headers.get('content-type') || '').includes('application/json')) {
+        const result = await response.json();
+        if (result?.ok === false || result?.success === false) throw new Error('Lead submission failed');
+      }
+      form.reset();
+      setInquiryEstimate('');
+      formStatus.dataset.state = 'success';
+      formStatus.textContent = 'Заявка отправлена. Я отвечу по указанному контакту.';
+    } catch {
+      formStatus.dataset.state = 'error';
+      formStatus.textContent = 'Не удалось подтвердить отправку. Данные сохранены. Попробуйте еще раз или напишите мне в Telegram.';
+    } finally {
+      clearTimeout(timeout);
+      formControls.forEach(control => { control.disabled = false; });
+      submitButton.disabled = false;
+      submitLabel.textContent = idleLabel;
+      form.removeAttribute('aria-busy');
+    }
   });
 })();
